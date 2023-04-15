@@ -56,9 +56,7 @@ const Header = (props) => {
             <div className="w-60 max-w-full px-4 xl:mr-12">
               <a
                 href="/"
-                className={`header-logo block w-full ${
-                  sticky ? "py-5 lg:py-2" : "py-8"
-                } `}
+                className={`header-logo block w-full`}
               >
                 <Image
                   src="/images/logo/logo-2.svg"
