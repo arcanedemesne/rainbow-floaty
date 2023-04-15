@@ -3,14 +3,14 @@ import { Fragment, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 // import { ExclamationIcon } from '@heroicons/react/outline';
 
-export default function DialogModal({
+const DialogModal = ({
     open = true,
     onClose = () => {},
     icon = null,
     title = "Dialog Modal Title",
     body = (<div>This is where the body goes</div>),
-    buttons = [(<button className='rounded-md bg-primary py-2 px-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80'>Ok</button>)]
-}) {
+    buttons = [(<button key="ok" className='rounded-md bg-primary py-2 px-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80'>Ok</button>)]
+}) => {
 
   const cancelButtonRef = useRef(null);
 
@@ -81,7 +81,7 @@ export default function DialogModal({
                   </div>
                 </div>
                 <div className="text-right">
-                  {buttons.map(b => b)}                
+                  {buttons.map(b => <span key={b}>b</span>)}                
                 </div>
               </div>
             </div>
@@ -91,3 +91,5 @@ export default function DialogModal({
     </Transition.Root>
   );
 }
+
+export default DialogModal;

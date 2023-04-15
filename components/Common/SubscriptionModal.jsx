@@ -2,7 +2,7 @@ import { useState } from "react";
 import DialogModal from "../Common/DialogModal";
 import TextField from "../Common/Inputs/TextField";
 
-export default ({ show, onClose }) => {
+const SubscriptionModal = ({ show, onClose }) => {
     
   const [firstName, setFirstName] = useState(null);
   const [lastName, setLastName] = useState(null);
@@ -69,3 +69,5 @@ export default ({ show, onClose }) => {
     />
   );
 };
+
+export default SubscriptionModal;

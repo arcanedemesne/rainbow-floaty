@@ -59,23 +59,16 @@ const Header = (props) => {
                 className={`header-logo block w-full`}
               >
                 <Image
-                  src="/images/logo/logo-2.svg"
-                  alt="logo"
-                  width={140}
-                  height={30}
-                  className="w-full dark:hidden"
-                />
-                <Image
                   src="/images/logo/logo.png"
                   alt="logo"
-                  width={140}
-                  height={30}
-                  className="hidden w-full dark:block"
+                  width={230}
+                  height={230}
+                  className="hidden absolute dark:block"
+                  style={{ marginTop: -47, zIndex: 99 }}
                 />
               </a>
             </div>
-            <a href="/" style={{ fontSize: 30, fontWeight: 'bold', width: '100%' }}>Rainbow FL.O.A.T.Y.</a>
-            <div className="flex w-full items-center place-content-end px-4">
+            <div className="flex w-full mt-8 items-center place-content-end px-4">
               <Link
                 href="/donate"
                 className="rounded-md bg-primary py-4 px-8 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"

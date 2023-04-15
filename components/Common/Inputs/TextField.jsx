@@ -1,4 +1,4 @@
-export default ({ label, type, name, placeholder, onChange }) => {
+const TextField = ({ label, type, name, placeholder, onChange }) => {
   return (
     <div className="mb-6">
       {label && (
@@ -19,3 +19,5 @@ export default ({ label, type, name, placeholder, onChange }) => {
     </div>
   );
 };
+
+export default TextField;

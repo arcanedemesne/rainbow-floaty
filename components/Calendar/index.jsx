@@ -1,6 +1,6 @@
 'use client';
 
-export default (props) => (
+const Calendar = (props) => (
   <section
     id="events"
   >
@@ -9,3 +9,5 @@ export default (props) => (
     </div>
   </section>
 );
+
+export default Calendar;
