@@ -81,7 +81,7 @@ const DialogModal = ({
                   </div>
                 </div>
                 <div className="text-right">
-                  {buttons.map(b => <span key={b}>b</span>)}                
+                  {buttons.map(b => <span key={b}>{b}</span>)}                
                 </div>
               </div>
             </div>
