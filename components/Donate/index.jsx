@@ -17,14 +17,12 @@ const Donate = () => {
                 <br /><br />
                 <span>
                   Donations can be made:<br />
-                  By check payable to Homsted Ministries with FLOATY in the memo line. Mail checks to PO Box TBD<br />
+                  By check payable to Homsted Ministries with FLOATY in the memo line. Mail checks to PO Box [TBD]<br />
                   OR<br />
-                  By credit/debit at the following link - Donate
+                  By credit/debit at the following link - coming soon...
                 </span>
                 <br /><br />
                 <span>Donation receipts including EIN can be emailed upon request for your tax records.</span>
-                <br /><br />
-                <span>A $15/person contribution is requested, but not required for participation</span>
               </>
             )}
             width={"100%"}

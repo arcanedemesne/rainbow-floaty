@@ -53,7 +53,7 @@ const Header = (props) => {
       >
         <div className="container">
           <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-60 max-w-full px-4 xl:mr-12">
+            <div className="w-60 max-w-full px-4 sm:mr-0 xl:mr-12">
               <a
                 href="/"
                 className={`header-logo block w-full`}
@@ -63,7 +63,7 @@ const Header = (props) => {
                   alt="logo"
                   width={230}
                   height={230}
-                  className="hidden absolute dark:block"
+                  className="absolute dark:block w-230 h-230"
                   style={{ marginTop: -47, zIndex: 99 }}
                 />
               </a>
