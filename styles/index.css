@@ -39,3 +39,12 @@
 section {
   margin-top: 4em;
 }
+
+a:link, a:visited, ::before, a::after {
+  color: white;
+  @apply opacity-80 no-underline !important;
+}
+a:hover {
+  color: white;
+  @apply opacity-100 no-underline !important;
+}

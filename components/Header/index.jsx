@@ -64,7 +64,7 @@ const Header = (props) => {
                   width={230}
                   height={230}
                   className="absolute dark:block w-230 h-230"
-                  style={{ marginTop: -47, zIndex: 99 }}
+                  style={{ marginTop: -42, zIndex: 99 }}
                 />
               </a>
             </div>
