@@ -46,7 +46,7 @@ const Hero = () => {
                   <button
                     className="rounded-md bg-primary py-4 px-8 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
                   >
-                    <a href="mailto:@rainbowfloaty.com">
+                    <a href="mailto:info@rainbowfloaty.com">
                       Contact<br />
                       <sub>send us an email</sub>
                     </a>

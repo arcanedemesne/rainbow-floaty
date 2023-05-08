@@ -13,7 +13,7 @@ const Events = () => {
               <span className="flex flex-row">
                 <span className="basis-1/2">
                   <span>
-                    Rainbow FL.O.A.T.Y. is planning our first official Adventure for November 4-5, 2023 at Highlands Hammock State Park.
+                    Rainbow FL.O.A.T.Y. is planning our first official Adventure for Fall 2023 at Highlands Hammock State Park.
                     This overnight camping event - open to families with children aged 9-14 - is intended to provide a structured social experience for trans and gender non-conforming youth as well as peer support for their families.
                     Activities will include a boardwalk nature hike through the cypress swamp, games, and campfire stories/skits.
                     All meals will be provided (with consideration given to dietary restrictions) and tents will be made available to those who cannot bring their own.
@@ -22,7 +22,7 @@ const Events = () => {
                   <br /><br />
                   <span>A $15/person contribution is requested, but not required for participation.</span>
                 </span>
-                <span className="basis-1/2 bg-[url('/images/events/highlands-hammock.jpg')]" />
+                <span className="basis-1/2 ml-20 bg-[url('/images/events/highlands-hammock.jpg')]" />
               </span>
             )}
             width={"100%"}
