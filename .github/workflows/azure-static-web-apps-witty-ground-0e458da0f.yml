@@ -40,7 +40,7 @@ jobs:
           action: "upload"
           app_location: "/"
           api_location: ""
-          app_artifact_location: "out"
+          app_artifact_location: "public"
         env:
           is_static_export: true
 
