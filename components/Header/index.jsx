@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+//import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 // import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
@@ -133,13 +133,13 @@ const Header = (props) => {
                     {menuData.map((menuItem, index) => (
                       <li key={menuItem.id} className="group relative">
                         {menuItem.path ? (
-                          globalThis?.location?.pathname === "/" ?
-                          <AnchorLink
-                            href={`${menuItem.path}`}
-                            className={menuItemClassName}
-                          >
-                            {buildMenuItem(menuItem.title)}
-                          </AnchorLink> :
+                          // globalThis?.location?.pathname === "/" ?
+                          // <AnchorLink
+                          //   href={`${menuItem.path}/`}
+                          //   className={menuItemClassName}
+                          // >
+                          //   {buildMenuItem(menuItem.title)}
+                          // </AnchorLink> :
                           <Link 
                             href={`${menuItem.path}`}
                             className={menuItemClassName}
