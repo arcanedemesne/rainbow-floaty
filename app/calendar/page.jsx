@@ -8,7 +8,6 @@ import TextField from "@/components/Common/Inputs/TextField";
 
 const key = "W@nd3r1ngFr0g";
 const encodedKey = Buffer.from(key).toString('base64');
-console.info('encodedKey', encodedKey);
 
 const CalendarPage = () => {
   const [showModal, setShowModal] = useState(true);

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import calendarImage from '../../public/images/calendar/november.png';
 
 const Calendar = (props) => (
   <section
@@ -8,7 +9,7 @@ const Calendar = (props) => (
   >
     <div className="container">
       <Image
-        src="/images/calendar/november.png"
+        src={calendarImage}
         height="1920"
         width="1080"
         alt="november"
