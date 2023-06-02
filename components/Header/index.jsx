@@ -1,12 +1,10 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 // import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
-import logoImage from '../../public/images/logo/logo.png';
 
 const Header = (props) => {
   // Navbar toggle
@@ -59,8 +57,8 @@ const Header = (props) => {
                 href="/"
                 className={`header-logo block w-full`}
               >
-                <Image
-                  src={logoImage}
+                <img
+                  src="/images/logo/logo.png"
                   alt="logo"
                   width={230}
                   height={230}
