@@ -1,8 +1,7 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+//import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 // import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
@@ -53,22 +52,35 @@ const Header = (props) => {
       >
         <div className="container">
           <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-60 max-w-full px-4 sm:mr-0 xl:mr-12">
+            <div className="w-60 max-w-full px-4" style={{ marginTop: -75, zIndex: 999 }}>
               <a
                 href="/"
                 className={`header-logo block w-full`}
               >
-                <Image
+                <img
                   src="/images/logo/logo.png"
                   alt="logo"
-                  width={230}
-                  height={230}
-                  className="absolute dark:block w-230 h-230"
-                  style={{ marginTop: -42, zIndex: 99 }}
+                  width={280}
+                  height={280}
+                  className="absolute invisible lg:visible"
+                />
+                <img
+                  src="/images/logo/logo.png"
+                  alt="logo"
+                  width={150}
+                  height={150}
+                  className="absolute invisible md:visible lg:invisible"
+                />
+                <img
+                  src="/images/logo/logo.png"
+                  alt="logo"
+                  width={120}
+                  height={120}
+                  className="absolute visible md:invisible top-1"
                 />
               </a>
             </div>
-            <div className="flex w-full mt-8 items-center place-content-end px-4">
+            <div className="invisible md:visible flex lg:w-full mt-8 items-center place-content-end px-4 md:pb-10">
               <Link
                 href="/donate"
                 className="rounded-md bg-primary py-4 px-8 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
@@ -93,53 +105,64 @@ const Header = (props) => {
                 <span className="drop-shadow-[0_2px_2px_rgba(0,0,0,.75)]">Volunteer</span>
               </Link>
             </div>
+            <button
+              onClick={navbarToggleHandler}
+              id="navbarToggler"
+              aria-label="Mobile Menu"
+              className="absolute right-4 top-10 block translate-y-[-50%] rounded-lg py-[6px] ring-primary focus:ring-2 md:hidden"
+            >
+              <span
+                className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
+                  navbarOpen ? " top-[7px] rotate-45" : " "
+                }`}
+              />
+              <span
+                className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
+                  navbarOpen ? "opacity-0 " : " "
+                }`}
+              />
+              <span
+                className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
+                  navbarOpen ? " top-[-8px] -rotate-45" : " "
+                }`}
+              />
+            </button>
           </div>
           <div className="relative -mx-4 flex items-center justify-between">
             <div className="w-60 max-w-full px-4 xl:mr-12">
             </div>
             <div className="flex w-full items-center place-content-end px-4">
-              <div>
-                <button
-                  onClick={navbarToggleHandler}
-                  id="navbarToggler"
-                  aria-label="Mobile Menu"
-                  className="absolute right-4 top-1/2 block translate-y-[-50%] rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
-                >
-                  <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                      navbarOpen ? " top-[7px] rotate-45" : " "
-                    }`}
-                  />
-                  <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                      navbarOpen ? "opacity-0 " : " "
-                    }`}
-                  />
-                  <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                      navbarOpen ? " top-[-8px] -rotate-45" : " "
-                    }`}
-                  />
-                </button>
+              <div className="mb-2 xl:mb-10">
                 <nav
                   id="navbarCollapse"
                   className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white py-4 px-6 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
                     navbarOpen
-                      ? "visibility top-full opacity-100"
+                      ? "visibility top-full mt-10 opacity-100"
                       : "invisible top-[120%] opacity-0"
                   }`}
                 >
-                  <ul className="block lg:flex lg:space-x-12">
+                  <ul className="lg:hidden block lg:space-x-12">
+                    <Link className={menuItemClassName} href="/donate">
+                      Donate
+                    </Link>
+                    <Link className={menuItemClassName} href="/calendar">
+                     Calendar
+                    </Link>
+                    <Link className={menuItemClassName} href="/volunteer">
+                      Volunteer
+                    </Link>
+                  </ul>
+                  <ul className="hidden md:visible md:block lg:flex lg:space-x-12">
                     {menuData.map((menuItem, index) => (
                       <li key={menuItem.id} className="group relative">
                         {menuItem.path ? (
-                          globalThis?.location?.pathname === "/" ?
-                          <AnchorLink
-                            href={`${menuItem.path}`}
-                            className={menuItemClassName}
-                          >
-                            {buildMenuItem(menuItem.title)}
-                          </AnchorLink> :
+                          // globalThis?.location?.pathname === "/" ?
+                          // <AnchorLink
+                          //   href={`${menuItem.path}`}
+                          //   className={menuItemClassName}
+                          // >
+                          //   {buildMenuItem(menuItem.title)}
+                          // </AnchorLink> :
                           <Link 
                             href={`${menuItem.path}`}
                             className={menuItemClassName}
