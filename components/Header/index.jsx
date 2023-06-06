@@ -44,7 +44,7 @@ const Header = (props) => {
   return (
     <>
       <header
-        className={`header top-0 left-0 z-40 flex w-full items-center bg-transparent !bg-primary !bg-opacity-50 ${
+        className={`header sm:top-10 md:top-0 left-0 z-40 flex w-full items-center bg-transparent !bg-primary !bg-opacity-50 ${
           sticky
             ? "!fixed !z-[9999] shadow-sticky backdrop-blur-sm !transition"
             : "absolute"
@@ -52,7 +52,8 @@ const Header = (props) => {
       >
         <div className="container">
           <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-60 max-w-full px-4 sm:mr-0 xl:mr-12">
+            <div className="w-60 max-w-full px-4 hidden lg:block xl:mr-12"
+                  style={{ marginTop: -75, zIndex: 999 }}>
               <a
                 href="/"
                 className={`header-logo block w-full`}
@@ -63,11 +64,10 @@ const Header = (props) => {
                   width={230}
                   height={230}
                   className="absolute dark:block w-230 h-230"
-                  style={{ marginTop: -42, zIndex: 99 }}
                 />
               </a>
             </div>
-            <div className="flex w-full mt-8 items-center place-content-end px-4">
+            <div className="hidden md:flex lg:w-full mt-8 items-center place-content-end px-4 md:pb-10">
               <Link
                 href="/donate"
                 className="rounded-md bg-primary py-4 px-8 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
@@ -92,43 +92,50 @@ const Header = (props) => {
                 <span className="drop-shadow-[0_2px_2px_rgba(0,0,0,.75)]">Volunteer</span>
               </Link>
             </div>
+            <button
+              onClick={navbarToggleHandler}
+              id="navbarToggler"
+              aria-label="Mobile Menu"
+              className="absolute right-4 top-20 block translate-y-[-50%] rounded-lg py-[6px] ring-primary focus:ring-2 lg:hidden"
+            >
+              <span
+                className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
+                  navbarOpen ? " top-[7px] rotate-45" : " "
+                }`}
+              />
+              <span
+                className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
+                  navbarOpen ? "opacity-0 " : " "
+                }`}
+              />
+              <span
+                className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
+                  navbarOpen ? " top-[-8px] -rotate-45" : " "
+                }`}
+              />
+            </button>
           </div>
           <div className="relative -mx-4 flex items-center justify-between">
             <div className="w-60 max-w-full px-4 xl:mr-12">
             </div>
             <div className="flex w-full items-center place-content-end px-4">
-              <div>
-                <button
-                  onClick={navbarToggleHandler}
-                  id="navbarToggler"
-                  aria-label="Mobile Menu"
-                  className="absolute right-4 top-1/2 block translate-y-[-50%] rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
-                >
-                  <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                      navbarOpen ? " top-[7px] rotate-45" : " "
-                    }`}
-                  />
-                  <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                      navbarOpen ? "opacity-0 " : " "
-                    }`}
-                  />
-                  <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                      navbarOpen ? " top-[-8px] -rotate-45" : " "
-                    }`}
-                  />
-                </button>
+              <div className="-mt-10">
                 <nav
                   id="navbarCollapse"
-                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white py-4 px-6 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
+                  className={`navbar absolute right-0 sm:mt-10 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white py-4 px-6 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
                     navbarOpen
-                      ? "visibility top-full opacity-100"
+                      ? "visibility top-full mt-20 opacity-100"
                       : "invisible top-[120%] opacity-0"
                   }`}
                 >
                   <ul className="block lg:flex lg:space-x-12">
+                    <Link
+                        href={"/"}
+                        key={"home"}
+                        className="flex lg:hidden py-2 text-base text-dark group-hover:opacity-70 dark:text-white drop-shadow-[0_3px_3px_rgba(0,0,0,.75)]"
+                      >
+                        <strong>Home</strong>
+                      </Link>
                     {menuData.map((menuItem, index) => (
                       <li key={menuItem.id} className="group relative">
                         {menuItem.path ? (

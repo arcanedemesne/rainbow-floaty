@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from "react";
-import Link from "next/link";
 import SubscriptionModal from "../Common/SubscriptionModal";
 
 const Hero = () => {
@@ -28,8 +27,9 @@ const Hero = () => {
                 className="wow fadeInUp mx-auto max-w-[800px] text-center"
                 data-wow-delay=".2s"
               >
-                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight drop-shadow-[0_10px_10px_rgba(0,0,0,1)]"
-                  style={{ fontSize: 80, marginTop: 80 }}>
+                <h1 className="mb-5 text-4xl md:text-6xl lg:text-8xl sm:mt-20 md:mt-20 font-bold leading-tight text-black dark:text-white drop-shadow-[0_10px_10px_rgba(0,0,0,1)]"
+                  //style={{ fontSize: 80, marginTop: 80 }}
+                >
                   Rainbow FL<br />Outdoor Adventures<br /><small>for</small> Trans Youth
                 </h1>
                 {/* <p className="mb-12 text-base font-medium !leading-relaxed text-body-color dark:text-white dark:opacity-90 sm:text-lg md:text-xl">
