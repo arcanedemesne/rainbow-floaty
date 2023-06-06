@@ -44,7 +44,7 @@ const Header = (props) => {
   return (
     <>
       <header
-        className={`header sm:top-10 md:top-0 left-0 z-40 flex w-full items-center bg-transparent !bg-primary !bg-opacity-50 ${
+        className={`header top-0 left-0 z-40 flex w-full items-center bg-transparent !bg-primary !bg-opacity-50 ${
           sticky
             ? "!fixed !z-[9999] shadow-sticky backdrop-blur-sm !transition"
             : "absolute"
@@ -52,8 +52,7 @@ const Header = (props) => {
       >
         <div className="container">
           <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-60 max-w-full px-4 hidden lg:block xl:mr-12"
-                  style={{ marginTop: -75, zIndex: 999 }}>
+            <div className="w-60 max-w-full px-4" style={{ marginTop: -75, zIndex: 999 }}>
               <a
                 href="/"
                 className={`header-logo block w-full`}
@@ -61,13 +60,27 @@ const Header = (props) => {
                 <img
                   src="/images/logo/logo.png"
                   alt="logo"
-                  width={230}
-                  height={230}
-                  className="absolute dark:block w-230 h-230"
+                  width={280}
+                  height={280}
+                  className="absolute invisible lg:visible"
+                />
+                <img
+                  src="/images/logo/logo.png"
+                  alt="logo"
+                  width={150}
+                  height={150}
+                  className="absolute invisible md:visible lg:invisible"
+                />
+                <img
+                  src="/images/logo/logo.png"
+                  alt="logo"
+                  width={120}
+                  height={120}
+                  className="absolute visible md:invisible top-1"
                 />
               </a>
             </div>
-            <div className="hidden md:flex lg:w-full mt-8 items-center place-content-end px-4 md:pb-10">
+            <div className="invisible md:visible flex lg:w-full mt-8 items-center place-content-end px-4 md:pb-10">
               <Link
                 href="/donate"
                 className="rounded-md bg-primary py-4 px-8 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
@@ -96,7 +109,7 @@ const Header = (props) => {
               onClick={navbarToggleHandler}
               id="navbarToggler"
               aria-label="Mobile Menu"
-              className="absolute right-4 top-20 block translate-y-[-50%] rounded-lg py-[6px] ring-primary focus:ring-2 lg:hidden"
+              className="absolute right-4 top-10 block translate-y-[-50%] rounded-lg py-[6px] ring-primary focus:ring-2 md:hidden"
             >
               <span
                 className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
@@ -119,23 +132,27 @@ const Header = (props) => {
             <div className="w-60 max-w-full px-4 xl:mr-12">
             </div>
             <div className="flex w-full items-center place-content-end px-4">
-              <div className="-mt-10">
+              <div className="mb-2 xl:mb-10">
                 <nav
                   id="navbarCollapse"
-                  className={`navbar absolute right-0 sm:mt-10 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white py-4 px-6 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
+                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white py-4 px-6 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
                     navbarOpen
-                      ? "visibility top-full mt-20 opacity-100"
+                      ? "visibility top-full mt-10 opacity-100"
                       : "invisible top-[120%] opacity-0"
                   }`}
                 >
-                  <ul className="block lg:flex lg:space-x-12">
-                    <Link
-                        href={"/"}
-                        key={"home"}
-                        className="flex lg:hidden py-2 text-base text-dark group-hover:opacity-70 dark:text-white drop-shadow-[0_3px_3px_rgba(0,0,0,.75)]"
-                      >
-                        <strong>Home</strong>
-                      </Link>
+                  <ul className="lg:hidden block lg:space-x-12">
+                    <Link className={menuItemClassName} href="/donate">
+                      Donate
+                    </Link>
+                    <Link className={menuItemClassName} href="/calendar">
+                     Calendar
+                    </Link>
+                    <Link className={menuItemClassName} href="/volunteer">
+                      Volunteer
+                    </Link>
+                  </ul>
+                  <ul className="hidden md:visible md:block lg:flex lg:space-x-12">
                     {menuData.map((menuItem, index) => (
                       <li key={menuItem.id} className="group relative">
                         {menuItem.path ? (
