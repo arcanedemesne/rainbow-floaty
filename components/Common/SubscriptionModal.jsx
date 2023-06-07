@@ -13,7 +13,7 @@ const SubscriptionModal = ({ show, onClose }) => {
 
     if (isFormValid()) {
         // TODO: send to Hōmstêd using Google SpreadSheet API?
-        onClose();
+          onClose();
     }
   };
   
@@ -29,7 +29,8 @@ const SubscriptionModal = ({ show, onClose }) => {
       title="Stay up to date!"
       body={
         <form>
-          <TextField
+          Coming Soon...
+          {/* <TextField
             label={null}
             type={"given_name"}
             name={"firstName"}
@@ -49,7 +50,7 @@ const SubscriptionModal = ({ show, onClose }) => {
             name={"email"}
             placeholder={"Email Address"}
             onChange={setEmail}
-          />
+          /> */}
         </form>
       }
       buttons={[
