@@ -3,7 +3,7 @@ import Events from "../../components/Events"
 
 const EventsPage = () => {
   return (
-    <div className="pt-20">
+    <div className="pt-0 md:pt-20">
       <Breadcrumb
         pageName="Upcoming Events"
         description="Events coming soon to Rainbow FL.O.A.T.Y!"
