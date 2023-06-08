@@ -137,18 +137,18 @@ const Header = (props) => {
                   id="navbarCollapse"
                   className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white py-4 px-6 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
                     navbarOpen
-                      ? "visibility top-full mt-10 opacity-100"
+                      ? "visibility top-full mt-0 opacity-100"
                       : "invisible top-[120%] opacity-0"
                   }`}
                 >
                   <ul className="lg:hidden block lg:space-x-12">
-                    <Link className={menuItemClassName} href="/donate">
+                    <Link className={menuItemClassName} href="/donate" onClick={navbarToggleHandler}>
                       Donate
                     </Link>
-                    <Link className={menuItemClassName} href="/calendar">
+                    <Link className={menuItemClassName} href="/calendar" onClick={navbarToggleHandler}>
                      Calendar
                     </Link>
-                    <Link className={menuItemClassName} href="/volunteer">
+                    <Link className={menuItemClassName} href="/volunteer" onClick={navbarToggleHandler}>
                       Volunteer
                     </Link>
                   </ul>

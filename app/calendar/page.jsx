@@ -27,7 +27,7 @@ const CalendarPage = () => {
   };
 
   return (
-    <>
+    <div className="pt-20">
       <Breadcrumb
         pageName="Calendar of events"
         description="Keep up to date and see what's coming soon!"
@@ -69,7 +69,7 @@ const CalendarPage = () => {
           </div>
         </section>
       )}
-    </>
+    </div>
   );
 };
 
