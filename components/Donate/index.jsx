@@ -18,7 +18,7 @@ const Donate = () => {
                 <span>
                   By cash or check payable to Homsted Ministries in-person at any event<br />
                   OR<br />
-                  By credit/debit at <a href="https://www.homsted.org/donate" target="homsted">homsted.org/donate</a>
+                  By credit/debit at <a href="https://www.homsted.org/donate" target="homsted">Hōmstêd.org/donate</a>
                 </span>
                 <br /><br />
                 <span>Donation receipts including EIN can be emailed upon request for your tax records.</span>
