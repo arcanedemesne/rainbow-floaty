@@ -16,10 +16,9 @@ const Donate = () => {
                 </span>
                 <br /><br />
                 <span>
-                  Donations can be made:<br />
-                  By check payable to Homsted Ministries with FLOATY in the memo line. Mail checks to PO Box [TBD]<br />
+                  By cash or check payable to Homsted Ministries in-person at any event<br />
                   OR<br />
-                  By credit/debit at the following link - coming soon...
+                  By credit/debit at <a href="https://www.homsted.org/donate" target="homsted">homsted.org/donate</a>
                 </span>
                 <br /><br />
                 <span>Donation receipts including EIN can be emailed upon request for your tax records.</span>
